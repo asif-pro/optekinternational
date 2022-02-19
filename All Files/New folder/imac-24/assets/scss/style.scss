@@ -1,0 +1,105 @@
+/*
+    Name: WordPress Video Testimonial Landing Page
+    version: 1.0.0
+*/
+
+/* Background Colors*/
+$secondary-color: #212121;
+
+$bg-two: #F6F8FB;
+$text-color: #606370;
+$dark: #1f2335;
+
+$white: #ffffff;
+$black: #000000;
+$base-color: #121212;
+$primary-color: #2480f8;
+$sf-pro: "SF Pro Display";
+
+/* BASE base styles, variables, mixins ect. */
+@import "./_default.scss";
+@import "./_nav.scss";
+
+
+/* Nav bar style */
+nav {
+    &.navbar {
+        background-color: transparent;
+        &::after {
+            
+            background-color: rgba($white, 0.6);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+        // Navigation menu
+        .main_menu {
+            .navBar {
+
+                li {
+
+                    a {
+                        color: #626364;
+
+                        &.active,
+                        &:hover {
+                            color: $primary-color;
+                        }
+                    }
+
+                    >.sub-menu {
+                        background-color: rgba($white, 0.6);
+                        backdrop-filter: saturate(180%) blur(20px);
+                    }
+                }
+            }
+        }
+
+    }
+}
+.home-links {
+    .home-logo {
+        &::after {
+            background-color: rgba($base-color, 0.4);
+        }
+        
+    }
+    .navbar-brand {
+        padding: 4px 0;
+        
+        img {
+            height: 36px;
+        }
+    }
+}
+/* Medium devices (tablets, 992px and up) */
+@media (max-width: 992px) {
+    // mobile responsive menu
+    .navbar-toggler {
+        span {
+            &.bar {
+                background-color: $primary-color !important;
+            }
+        }
+    }
+    .main_menu {
+        background: $white;
+        .navBar {
+            li {
+                a {
+                    color: $white;
+
+                    &.btn {
+                        color: $white !important;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+
+        .close_menu {
+            &::after,
+            &::before {
+                background: $black;
+            }
+        }
+    }
+}
